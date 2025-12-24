@@ -19,25 +19,13 @@ index.get('/expenses', (req,res) => {
     res.status(200).json(expenses);
 });
 
-// POST: To add a new expenses to the list of expenses (CREATE) ===> WORKS, BUT NOT AS EXPECTED.
+// POST: To add a new expenses to the list of expenses (CREATE) ===> WORKS FINE!
 index.post('/expenses', (req,res) => {
 const newExpenses = {id: expenses.length + 1, ... req.body};
 const successPrompt = "Expenses has been logged successfully!";
-if(newExpenses.amount != "") {
-  if(newExpenses.date != ""){
-    if(newExpenses.category != ""){
-      expenses.push(newExpenses);
-      console.log(successPrompt);
-      res.status(201).json(newExpenses);
-    }else{
-      res.status(400).json({error: "Category is missing! We need it for proper classification."})
-    };
-  }else{
-    res.status(400).json({error: "Date is missing! Please include it for propoer record."})
-  };
-}else{
-  res.status(400).json({error: "Please include the 'Amount', we need it for proper documentation"})
-}
+expenses.push(newExpenses);
+console.log(successPrompt);
+res.status(201).json(newExpenses);
 });
 
 
