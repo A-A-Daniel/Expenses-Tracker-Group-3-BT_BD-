@@ -17,12 +17,12 @@ index.get('/expenses', (req,res) => {
     res.status(200).json(expenses);
 });
 
-// GET All – Read specific expense => WORKS FINE!
+// GET: Read specific expense => WORKS FINE!
 index.get('/expenses/:id', (req, res) => {
   // Check if correct ID is inputted
   if(parseInt(req.params.id) <= expenses.length){
     const expense = expenses.find((e) => e.id === parseInt(req.params.id));
-    res.status(200).json(todo); // Send array as JSON
+    res.status(200).json(expense); // Send array as JSON
   }else{
     res.status(404).json({error: "Expense not Found"});
   };  
