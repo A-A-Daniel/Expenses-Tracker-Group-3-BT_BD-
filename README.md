@@ -4,4 +4,4 @@ A lightweight Express.js API designed to manage personal finances through a comp
 How to Run and Test
 Setup: Run pnpm install in your terminal to install dependencies, then start the server using node index.js.
 
-Testing: Open Postman and point your requests to http://localhost:4000/expenses to test the POST, GET, PATCH, and DELETE endpoints.
+Testing: Open Postman and point your requests to http://localhost:3000/expenses or 127.0.0.1:3000/expenses to test the POST, GET, PATCH, and DELETE endpoints.
